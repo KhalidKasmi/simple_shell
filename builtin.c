@@ -3,7 +3,7 @@
 /**
  * _myexit - terminate the shell process
  * @inf:  Structure containing possible arguments. Used to keep
-          consistent function prototype.
+ *         consistent function prototype.
  * Return: quits shell with a given exit status
  * (0) if inf.argv[0] != "exit"
  */

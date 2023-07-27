@@ -2,12 +2,13 @@
 
 /**
  * checkinteractive - determine whether the shell is in interactive mode
- * @inf: address structure
+ * @inf1: address structure
  *
  * Return: 1 if in interactive mode, 0 otherwise
  */
-int checkinteractive(info_t *inf1) {
-  return (isatty(STDIN_FILENO) && inf1->readfd <= 2);
+int checkinteractive(info_t *inf1)
+{
+return (isatty(STDIN_FILENO) && inf1->readfd <= 2);
 }
 
 /**
@@ -16,11 +17,12 @@ int checkinteractive(info_t *inf1) {
  * @del: the delimeter string
  * Return: 1 if true, 0 if false
  */
-int checkdelim(char c, char *del) {
-  while (*del)
-    if (*del++ == c)
-      return (1);
-  return (0);
+int checkdelim(char c, char *del)
+{
+while (*del)
+if (*del++ == c)
+return (1);
+return (0);
 }
 
 /**
@@ -29,11 +31,12 @@ int checkdelim(char c, char *del) {
  * Return: 1 if c is alphabetic, 0 otherwise
  */
 
-int checkalpha(int c) {
-  if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-    return (1);
-  else
-    return (0);
+int checkalpha(int c)
+{
+if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+return (1);
+else
+return (0);
 }
 
 /**
@@ -42,26 +45,28 @@ int checkalpha(int c) {
  * Return: 0 if no numeric characters found, the resulting integer otherwise
  */
 
-int _atoi(char *str) {
-  int i, sign = 1, flag = 0, output;
-  unsigned int res = 0;
+int _atoi(char *str)
+{
+int i, sign = 1, flag = 0, output;
+unsigned int res = 0;
 
-  for (i = 0; str[i] != '\0' && flag != 2; i++) {
-    if (str[i] == '-')
-      sign *= -1;
+for (i = 0; str[i] != '\0' && flag != 2; i++) {
+if (str[i] == '-')
+sign *= -1;
 
-    if (str[i] >= '0' && str[i] <= '9') {
-      flag = 1;
-      res *= 10;
-      res += (s[i] - '0');
-    } else if (flag == 1)
-      flag = 2;
+if (str[i] >= '0' && str[i] <= '9') {
+flag = 1;
+res *= 10;
+res += (s[i] - '0');
+    }
+else if (flag == 1)
+flag = 2;
   }
 
-  if (sign == -1)
-    output = -res;
-  else
-    output = res;
+if (sign == -1)
+output = -res;
+else
+output = res;
 
-  return (output);
+return (output);
 }

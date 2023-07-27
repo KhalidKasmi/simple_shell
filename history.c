@@ -181,7 +181,7 @@ int build_history_list(info_t *inf, char *buf, int linecount)
  *
  * Return: the new histcount
  */
-int remumber_history(info_t *inf)
+int remember_history(info_t *inf)
 {
 	list_t *node = inf->history;
 	int i = 0;
