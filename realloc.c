@@ -13,8 +13,8 @@ char *_memset(char *m, char b, unsigned int n)
 
 	for (i = 0; i < n; i++)
 		m[i] = b;
-	return (m);
-}
+	        return (m);
+  }
 
 /**
  * ffree - frees a string of strings
