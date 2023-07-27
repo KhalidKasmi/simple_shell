@@ -5,7 +5,7 @@
  * @m: the pointer to the memory area
  * @b: the byte to fill *s with
  * @n: the amount of bytes to be filled
- * Return: (s) a pointer to the memory area s
+ * Return: (m) a pointer to the memory area m
  */
 char *_memset(char *m, char b, unsigned int n)
 {
@@ -46,7 +46,8 @@ void *_realloc(void *ptr, unsigned int oldsize, unsigned int newsize)
 	if (!ptr)
 		return (malloc(newsize));
 	if (!newsize)
-		return (free(ptr), NULL);
+		free(ptr);
+		return (NULL);
 	if (newsize == oldsize)
 		return (ptr);
 
