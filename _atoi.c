@@ -22,7 +22,7 @@ int checkdelim(char c, char *del)
 while (*del)
      if (*del++ == c)
           return (1);
-          return (0);
+return (0);
 }
 
 /**

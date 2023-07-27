@@ -62,7 +62,7 @@ char **strtow2(char *str, char delim)
 	if (str == NULL || str[0] == 0)
 		return (NULL);
 	for (i = 0; str[i] != '\0'; i++)
-		if ((str[i] != d && str[i + 1] == delim) ||
+		if ((str[i] != delim && str[i + 1] == delim) ||
 				    (str[i] != delim && !str[i + 1]) || str[i + 1] == delim)
 			numwords++;
 	if (numwords == 0)
