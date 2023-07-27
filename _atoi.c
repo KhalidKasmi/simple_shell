@@ -57,7 +57,7 @@ for (i = 0; str[i] != '\0' && flag != 2; i++) {
         if (str[i] >= '0' && str[i] <= '9') {
             flag = 1;
             res *= 10;
-            res += (s[i] - '0');
+            res += (str[i] - '0');
     }
            else if (flag == 1)
                  flag = 2;

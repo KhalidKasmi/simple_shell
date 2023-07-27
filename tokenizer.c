@@ -14,10 +14,10 @@ char **strtow(char *str, char *delim)
 
 	if (str == NULL || str[0] == 0)
 		return (NULL);
-	if (!d)
+	if (!delim)
 		delim = " ";
 	for (i = 0; str[i] != '\0'; i++)
-		if (!checkdelim(str[i], d) && (checkdelim(str[i + 1], d) || !str[i + 1]))
+		if (!checkdelim(str[i], delim) && (checkdelim(str[i + 1], delim) || !str[i + 1]))
 			numwords++;
 
 	if (numwords == 0)

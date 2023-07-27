@@ -26,7 +26,7 @@ int hsh(info_t *inf, char **av)
 			if (builtin_ret == -1)
 				find_cmd(inf);
 		}
-		else if (checkinteractive(info))
+		else if (checkinteractive(inf))
 			_putchar('\n');
 		free_info(inf, 0);
 	}
