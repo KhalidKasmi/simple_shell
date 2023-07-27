@@ -20,9 +20,9 @@ return (isatty(STDIN_FILENO) && inf1->readfd <= 2);
 int checkdelim(char c, char *del)
 {
 while (*del)
-if (*del++ == c)
-return (1);
-return (0);
+     if (*del++ == c)
+          return (1);
+          return (0);
 }
 
 /**
@@ -34,9 +34,9 @@ return (0);
 int checkalpha(int c)
 {
 if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-return (1);
-else
-return (0);
+       return (1);
+           else
+              return (0);
 }
 
 /**
@@ -51,22 +51,22 @@ int i, sign = 1, flag = 0, output;
 unsigned int res = 0;
 
 for (i = 0; str[i] != '\0' && flag != 2; i++) {
-if (str[i] == '-')
-sign *= -1;
+   if (str[i] == '-')
+         sign *= -1;
 
-if (str[i] >= '0' && str[i] <= '9') {
-flag = 1;
-res *= 10;
-res += (s[i] - '0');
+        if (str[i] >= '0' && str[i] <= '9') {
+            flag = 1;
+            res *= 10;
+            res += (s[i] - '0');
     }
-else if (flag == 1)
-flag = 2;
+           else if (flag == 1)
+                 flag = 2;
   }
 
-if (sign == -1)
-output = -res;
-else
-output = res;
+            if (sign == -1)
+               output = -res;
+               else
+                output = res;
 
-return (output);
+      return (output);
 }
